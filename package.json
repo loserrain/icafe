@@ -1,0 +1,57 @@
+{
+  "name": "isimple",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy-dist": "sh ./commands/deploy.sh",
+    "eslint-fix": "eslint src/**/**/*.vue --fix",
+    "format-code": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\"",
+    "format": "prettier --write 'src/**/*.{js,vue}'"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.4",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "file-loader": "^4.2.0",
+    "lint-staged": "^8.2.1",
+    "node-sass": "^4.12.0",
+    "popper.js": "^1.15.0",
+    "raw-loader": "^3.1.0",
+    "sass": "^1.22.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.4.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
